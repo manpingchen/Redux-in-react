@@ -5,6 +5,7 @@ import {
   // connect
 } from "react-redux";
 // import { Component } from "react";
+import { counterActions } from "../store";
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter);
@@ -12,19 +13,19 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   const incrementHandler = () => {
-    dispatch({ type: "INCREMENT" });
+    dispatch(counterActions.increment());
   };
 
   const increaseHandler = () => {
-    dispatch({ type: "INCREASE", amount: 5 });
+    dispatch(counterActions.increase(10)); // {type: UNIQUE_ACTION_NAME, payload: 10}
   };
 
   const decrementHandler = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch(counterActions.decrement());
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "TOGGLE" });
+    dispatch(counterActions.toggleHandler());
   };
 
   return (
