@@ -5,7 +5,7 @@ import {
   // connect
 } from "react-redux";
 // import { Component } from "react";
-import { counterActions } from "../store";
+import { counterActions } from "../store/counter";
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter.counter);
